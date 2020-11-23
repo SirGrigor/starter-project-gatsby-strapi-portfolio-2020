@@ -16,9 +16,27 @@ const query = graphql`
     }
 `
 const Hero = () => {
-  const data = useStaticQuery(query);
-  console.log(data)
-  return <h2>hero component</h2>
+  const {
+    file: {
+      childImageSharp: {fluid}
+    }
+  } = useStaticQuery(query)
+
+  return <header className='hero'>
+    <div className='section-center hero-center'>
+    <article className='hero-info'></article>
+      <div>
+        <div className='underline'></div>
+        <h1>I`m Ilja</h1>
+        <h4>Freelance web developer</h4>
+        <Link to='/contact' className='btn'>
+          Contact me
+        </Link>
+        <SocialLinks />
+      </div>
+      <Image fluid={fluid} className='hero-img'></Image>
+    </div>
+  </header>
 }
 
 export default Hero
