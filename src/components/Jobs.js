@@ -23,7 +23,7 @@ const Jobs = () => {
   const {
     allStrapiJobs:{nodes:jobs}} = data
     const [value,setValue] = React.useState(0)
-  const {company, position, date, description} = jobs[value];
+  const {company, position, date, desc} = jobs[value];
   return (
   <section className='section jobs'>
     <Title title='experience'/>
@@ -47,7 +47,7 @@ const Jobs = () => {
         {desc.map(item => {
           return (
             <div key={item.id} className='job-desc'>
-              <FaAngleDoubleRight className='job-icon'></FaAngleDoubleRight>
+              <FaAngleDoubleRight className="job-icon"></FaAngleDoubleRight>
               <p>{item.name}</p>
             </div>
           )
