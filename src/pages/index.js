@@ -8,10 +8,10 @@ import Projects from "../components/Projects"
 import Blogs from "../components/Blogs"
 import SEO from "../components/SEO"
 export default ({ data }) => {
-  const {
-    allStrapiProjects: { nodes: projects },
-    allStrapiBlogs: { nodes: blogs },
-  } = data
+    const {
+        allStrapiProjects: { nodes: projects },
+        allStrapiBlogs: { nodes: blogs },
+    } = data
 
   return (
     <Layout>
@@ -19,7 +19,7 @@ export default ({ data }) => {
       <Hero />
       <Services />
       <Jobs />
-      <Projects projects={projects} title="featured projects" showLink />
+      <Projects projects={projects} title="featured projects" showLink/>
       <Blogs blogs={blogs} title="latest articles" showLink />
     </Layout>
   )
