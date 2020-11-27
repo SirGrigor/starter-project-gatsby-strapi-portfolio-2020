@@ -22,6 +22,9 @@ const Blog = ({ id, title, image, date, category, slug, desc }) => {
   )
 }
 
-Blog.propTypes = {}
+Blog.propTypes = {
+
+
+}
 
 export default Blog
