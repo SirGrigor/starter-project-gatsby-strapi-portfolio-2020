@@ -2,15 +2,14 @@ import React from "react"
 import Links from "../constants/links"
 import SocialLinks from "../constants/socialLinks"
 import { FaTimes } from "react-icons/fa"
-const Sidebar = () => {
-  const isOpen = true;
+const Sidebar = ({isOpen, toggleSidebar}) => {
   return <aside className={` sidebar ${isOpen ? "show-sidebar" : ""}`}
   >
-    <button className='close-btn'>
+    <button type='close-btn' className="toggle-btn" onClick={toggleSidebar}>
       <FaTimes/>
     </button>
-    <Links styleClass='sidebar-links'/>
-    <SocialLinks styleClass='sidebar-icons'/>
+    <Links styleClass={`${isOpen ? 'sidebar-links': ""}`}/>
+    <SocialLinks styleClass={`${isOpen ? 'sidebar-icons': ""}`}/>
   </aside>
 }
 
